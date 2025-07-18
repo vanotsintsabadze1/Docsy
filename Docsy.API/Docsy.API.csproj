@@ -7,12 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.7" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.6.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.4" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Docsy.Infrastructure\Docsy.Infrastructure.csproj" />
+    <ProjectReference Include="..\Docsy.Persistence\Docsy.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
