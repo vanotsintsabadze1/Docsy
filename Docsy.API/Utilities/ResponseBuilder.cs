@@ -33,7 +33,7 @@ public class ResponseBuilder
     private static void ValidateFailedResponseStatusCode(int statusCode)
     {
         if (statusCode < StatusCodes.Status400BadRequest || statusCode > StatusCodes.Status499ClientClosedRequest)
-            throw new ArgumentOutOfRangeException(nameof(statusCode), "Status code must be in the range of 400 to 499 for failed responses.");
+            throw new ArgumentOutOfRangeException(nameof(statusCode), "Status code must be in the range of 400 to 599 for failed responses.");
     }
 }
 
