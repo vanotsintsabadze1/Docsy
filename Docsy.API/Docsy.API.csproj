@@ -13,12 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Docsy.Infrastructure\Docsy.Infrastructure.csproj" />
+    <ProjectReference Include="..\Docsy.Persistence\Docsy.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Docsy.Infrastructure\Docsy.Infrastructure.csproj" />
-    <ProjectReference Include="..\Docsy.Persistence\Docsy.Persistence.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
