@@ -2,7 +2,7 @@
 
 namespace Docsy.API.Utilities;
 
-public class ResponseBuilder
+public static class ResponseBuilder
 {
     public static ResponseResult<IFailedResponse> Fail(string message, int statusCode)
     {
