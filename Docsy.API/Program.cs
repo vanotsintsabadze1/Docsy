@@ -1,5 +1,8 @@
 using Scalar.AspNetCore;
 using Docsy.Persistence;
+using Docsy.API;
+using Docsy.API.Interfaces.PasswordUtility;
+using Docsy.API.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IPasswordUtility, PasswordUtility>();
 
 builder.Services.RegisterPersistenceServices(builder.Configuration);
 
@@ -27,5 +32,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+if (app.Environment.IsDevelopment())
+    await Seed.Initialize(app.Services);
 
 app.Run();
